@@ -1,0 +1,90 @@
+
+.sidebar {
+    list-style: none;
+    //text-decoration: none;
+    position: fixed;
+    left: 3rem;
+    top: 3rem;
+    width: 25rem;
+    height: 95vh;
+    color: $color-white;
+    z-index: 100;
+    background-color:$color-tertiary-dark;
+    transition: all .5s ease;
+    opacity: 0;
+
+    ul{
+        list-style: none;
+        padding: 2rem;
+    }
+
+    &__header{
+        font-size: 2rem;
+        color: white;
+        text-align: center;
+        line-height: 7rem;
+        background: $color-tertiary-light;
+        user-select: none;
+    }
+
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 6.5rem;
+    font-size: 1.6rem;
+    color: $color-white;
+    padding-left: 4rem;
+    border-top: 1px solid $color-grey-dark;
+    //border-bottom: 1px solid black;
+    transition: .2s;
+}
+ul li:hover a{
+    padding-left: 5rem;
+}
+.sidebar ul a i{
+    margin-right: 1.6rem;
+}
+#check{
+    display: none;
+}
+label #bars, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: $color-black;
+    border-radius: 3px;
+}
+label #bars{
+    left: 4rem;
+    top: 5.5rem;
+    font-size: 3.5rem;
+    color: white;
+    z-index: 1000;
+    padding: .6rem 1.2rem;
+    transition: all .5s;
+}
+label #cancel{
+    z-index: 1111;
+    left: -23.5rem;
+    top: 4.7rem;
+    font-size: 2.5rem;
+    color: $color-white;
+    padding: .3rem .7rem;
+    transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+    left: 3rem;
+    opacity: 1;
+}
+#check:checked ~ label #bars{
+    left: 25rem;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel {
+    left: 23.5rem;
+}
+#check:checked ~ .header {
+    margin-left: 25rem;
+}
